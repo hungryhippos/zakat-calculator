@@ -1,0 +1,47 @@
+ <!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Title of the document</title>
+	</head>
+	<body>
+	<p>
+<font size="6" face="verdana" color="blue">
+<b>Calculate Zakat for 2015</b><br/>
+</font>
+</p>
+	
+	<br/>
+		<script>
+		</script>
+		<form>
+			<font size="3" face="verdana" color="blue">
+
+			Total Gold Value : $<input onblur="checkNumeric(this);" type="text" name="qty" id="gold"/><br>
+			Total Silver Value : $<input onblur="checkNumeric(this);" type="text" name="qty" id="silver"/><br>
+			Cash on Hand : $<input onblur="checkNumeric(this);" type="text" name="qty" id="cash"/><br>
+			Checking Account : $<input onblur="checkNumeric(this);" type="text" name="qty" id="checking"/><br>
+			401k/IRA : $<input onblur="checkNumeric(this);" type="text" name="qty" id="ira"/><br>
+			<br><br>
+			<input type="button" onclick="findTotal()" value="Calculate my Zakat!" name="btnSub"></input> $<input type="text" name="total" id="total"/>
+</font>
+  
+  <script type="text/javascript">
+
+function findTotal(){
+    var arr = document.getElementsByName('qty');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+			if (tot < 3540 ) 
+			alert ("You don't meet the minimum required amount");
+	else
+	document.getElementById('total').value = tot * .025;
+
+}
+
+    </script>
+		</form>
+	</body>
+</html> 
